@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 DIR__APPS="${HOME}/.local/share/applications"
-DIR__BIN="${HOME}/bin/aseprite"
+DIR__BIN="${HOME}/Software/aseprite"
 PATH__LAUNCHER="${DIR__APPS}/aseprite.desktop"
 
 sudo chown -R $(id -u):$(id -g) ./build
-mkdir -p ~/bin && mv ./build/bin "${DIR__BIN}"
+mkdir -p "${DIR__BIN}" && mv ./build/bin/* "${DIR__BIN}"
 mv "${DIR__BIN}/aseprite.desktop" "${DIR__APPS}/"
 
 # update icon path
