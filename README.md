@@ -1,17 +1,17 @@
 # Build Containers
 
-A repo for Container configs to build binaries
+A repo for Container configs to build binaries for Ubuntu/Mint
 
 ---
 
 ## Aseprite
 
 ```sh
-cd aseprite
+cd ./aseprite
 # clone repo
-git clone git@github.com:aseprite/aseprite.git repo
+git clone git@github.com:aseprite/aseprite.git ./repo
 # switch to version and download deps
-(cd repo && git checkout v1.2.35 && git submodule update --init --recursive && wget -O "skia.zip" --tries=3 https://github.com/aseprite/skia/releases/download/m102-861e4743af/Skia-Linux-Release-x64.zip && unzip skia.zip -d ./skia)
+(cd ./repo && git checkout v1.2.40 && git submodule update --init --recursive && wget -O "skia.zip" --tries=3 https://github.com/aseprite/skia/releases/download/m102-861e4743af/Skia-Linux-Release-x64-libc++.zip && unzip skia.zip -d ./skia)
 # build container
 docker-compose build
 # build binary
