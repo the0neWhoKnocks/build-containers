@@ -6,6 +6,8 @@ A repo for Container configs to build binaries for Ubuntu/Mint
 
 ## Aseprite
 
+A sprite painting/animating program.
+
 ```sh
 cd ./aseprite
 # clone repo
@@ -27,4 +29,20 @@ Debug Container issues with
 docker-compose up
 # terminal 2
 docker-compose exec build_aseprite bash
+```
+
+---
+
+## HotCorner
+
+Linux Mint XFCE doesn't ship with hot corners, this adds'em.
+
+```sh
+cd ./hotcorner
+# clone repo
+git clone git@github.com:christopherkobayashi/xfce4-hotcorner-plugin.git ./repo
+# build container
+docker-compose build
+# build binary
+docker-compose run --rm build_hotcorner /media/build.sh
 ```

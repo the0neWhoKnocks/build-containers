@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  build_hotcorner:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: tail -F anything
+    container_name: build_hotcorner
+    environment:
+      DIR__BUILD: "/media/build"
+      DIR__SRC: "/hotcorner"
+    volumes:
+      - "${PWD}/build.sh:/media/build.sh"
+      - "${PWD}/build:/media/build"
+      - "${PWD}/repo:/hotcorner"
+
